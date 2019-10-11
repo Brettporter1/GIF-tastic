@@ -1,0 +1,53 @@
+body{
+    background:#eee;
+}
+#giphy-container{
+    width:75%;
+    margin:25px auto;
+}
+#button-container{
+    width:100%;
+
+}
+.topic-button{
+    width:19%;
+    height:40px;
+    margin:5px;
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+    background: #ac4a1d;
+    color:#fff;
+}
+
+.topic-button:hover{
+    background:#1d3eac;
+}
+#gif-search{
+    width:90%;
+    height:30px;
+    border-radius:5px;
+    border:none;
+    font-size:16px;
+    padding:5px;
+    margin:5px;
+}
+#submit{
+    width:8%;
+    height:40px;
+}
+#gif-container{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+}
+
+.gif-image{
+    width:19%;
+    margin:5px;
+    height:auto;
+    min-height:100px;
+}
+
+@media screen 
