@@ -4,33 +4,45 @@ $(document).ready(function () {
     gif.findTopics(topics);
 });
 
+// collect input from search and push to array to render new button
 $(document).on('click', '#submit', function(event){
     event.preventDefault();
     var newSearch = $('#gif-search').val().trim();
     topics.push(newSearch);
     console.log(topics);
     gif.findTopics(topics);
-    $('#gif-search').val().empty()
 })
 
+// render gifs to the page on click of topic
 $(document).on('click', '.topic-button', function () {
     $('#gif-container').empty();
-    var searchTop = $(this).attr('data-type');
-    var queryURL = `http://api.giphy.com/v1/gifs/search?q=$${searchTop}&api_key=mhxOTagN8EaT769YTM0I3Oj5CYZryVgw&limit=10`;
+    var searchTop = $(this).data('type');
+    var queryURL = `https://api.giphy.com/v1/gifs/search?q=$${searchTop}&api_key=mhxOTagN8EaT769YTM0I3Oj5CYZryVgw&limit=10`;
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         var results = response.data
+        console.log(response.data)
         for (var i = 0;i<results.length;i++){
             gif.showGifs(results[i])
         }
     })
 })
-$
+// animate the gif on click
+$(document).on('click', '.gif-image', function(){
+    var state = $(this).attr('data-state');
+    if(state === 'still'){
+        $(this).attr('src', $(this).data('animated'))
+        $(this).attr('data-state', 'animated')
+    }
+    else{
+        $(this).attr('src', $(this).data('still'));
+        $(this).attr('data-state', 'still');
+    }
+})
 
-$(document).on('click')
 
 var gif = {
     findTopics: function (topics) {
@@ -50,10 +62,19 @@ var gif = {
 
     },
     showGifs: function (myGifs) {
-        newGif = $('<img>')
-        newGif.attr('src',myGifs.images.fixed_height_still.url)
-        newGif.addClass('gif-image');
-        $('#gif-container').append(newGif);
+        var gifDiv = $('<div class="gif-wrapper">')
+        var still = myGifs.images.fixed_width_still.url;
+        var animated = myGifs.images.fixed_width.url;
+        var rating = myGifs.rating;
+        var pRating = $(`<p class="gif-rating">${rating}</p>`);
+        var gifImg = $('<img>')
+        gifImg.addClass('gif-image')
+        gifImg.attr('src', still)
+        gifImg.attr('data-still', still);
+        gifImg.attr('data-animated', animated)
+        gifImg.attr('data-state','still');
+        gifDiv.append(gifImg).append(pRating);
+        $('#gif-container').append(gifDiv);
     },
 
 

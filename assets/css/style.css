@@ -43,11 +43,22 @@ body{
     justify-content: flex-start;
 }
 
-.gif-image{
+.gif-wrapper{
     width:19%;
     margin:5px;
     height:auto;
     min-height:100px;
 }
-
-@media screen 
+.gif-wrapper p {
+    width:100%;
+    padding:5px 0px;
+    background:#1d3eac;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align:center;
+    margin:-2px 0px 0px;
+}
+.gif-image{
+    width:100%;
+    margin:0px;
+}
