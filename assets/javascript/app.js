@@ -17,7 +17,7 @@ $(document).on('click', '#submit', function(event){
 $(document).on('click', '.topic-button', function () {
     $('#gif-container').empty();
     var searchTop = $(this).data('type');
-    var queryURL = `https://api.giphy.com/v1/gifs/search?q=$${searchTop}&api_key=mhxOTagN8EaT769YTM0I3Oj5CYZryVgw&limit=10`;
+    var queryURL = `https://api.giphy.com/v1/gifs/search?q=$${searchTop}&api_key=mhxOTagN8EaT769YTM0I3Oj5CYZryVgw&limit=${gifLimit}`;
 
     $.ajax({
         url: queryURL,
@@ -58,9 +58,9 @@ var gif = {
         newButton.text(myTopic);
         $('#button-container').append(newButton);
     },
-    removeButton: function () {
+    // removeButton: function () {
 
-    },
+    // },
     showGifs: function (myGifs) {
         var gifDiv = $('<div class="gif-wrapper">')
         var still = myGifs.images.fixed_width_still.url;

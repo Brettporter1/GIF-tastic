@@ -1,5 +1,5 @@
 body{
-    background:#eee;
+    background:#19141f;
 }
 #giphy-container{
     width:75%;
@@ -7,21 +7,27 @@ body{
 }
 #button-container{
     width:100%;
-
+    padding:5px 0px;
 }
 .topic-button{
-    width:19%;
-    height:40px;
+    width:24%;
+    height:45px;
     margin:5px;
-    font-size:12px;
+    padding:0px;
+    font-size:14px;
     font-weight:bold;
     text-transform:uppercase;
+    border:2px solid #ac4a1d;
     background: #ac4a1d;
     color:#fff;
+    transition:0.3s
 }
 
 .topic-button:hover{
-    background:#1d3eac;
+    background:transparent;
+    border:2px solid #ac4a1d;
+    font-size:14px;
+    letter-spacing: 0.09em;
 }
 #gif-search{
     width:90%;
@@ -51,6 +57,7 @@ body{
     margin:5px;
     height:auto;
     min-height:100px;
+    
 }
 .gif-wrapper p {
     width:100%;
@@ -66,6 +73,8 @@ body{
     width:100%;
     margin:0px;
 }
+
+
 @media only screen and (max-width: 1200px) {
     #giphy-container{
         width:80%;
