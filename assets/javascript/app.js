@@ -31,6 +31,7 @@ $(document).on('click', '.topic-button', function () {
         }
     })
 })
+
 // animate the gif on click
 $(document).on('click', '.gif-image', function(){
     var state = $(this).attr('data-state');
