@@ -1,4 +1,4 @@
-var topics = ['Will Farrel', 'Zach Galifianakis', 'Borat','Robin Williams', 'Jim Carrey'];
+var topics = ['Will Farrel', 'Zach Galifianakis', 'Borat','Robin Williams', 'Jim Carrey','Chevy Chase', 'Richard Pryor', 'Gene Wilder'];
 var gifLimit = 10
 $(document).ready(function () {
     gif.findTopics(topics);
@@ -7,11 +7,12 @@ $(document).ready(function () {
 // collect input from search and push to array to render new button
 $(document).on('click', '#submit', function(event){
     event.preventDefault();
+    if($('#gif-search').val().length !== 0){
     var newSearch = $('#gif-search').val().trim();
     topics.push(newSearch);
     console.log(topics);
     gif.findTopics(topics);
-})
+}})
 
 // render gifs to the page on click of topic
 $(document).on('click', '.topic-button', function () {
@@ -63,10 +64,10 @@ var gif = {
     // },
     showGifs: function (myGifs) {
         var gifDiv = $('<div class="gif-wrapper">')
-        var still = myGifs.images.fixed_width_still.url;
-        var animated = myGifs.images.fixed_width.url;
+        var still = myGifs.images.fixed_height_still.url;
+        var animated = myGifs.images.fixed_height.url;
         var rating = myGifs.rating;
-        var pRating = $(`<p class="gif-rating">${rating}</p>`);
+        var pRating = $(`<p class="gif-rating">Rated: ${rating}</p>`);
         var gifImg = $('<img>')
         gifImg.addClass('gif-image')
         gifImg.attr('src', still)

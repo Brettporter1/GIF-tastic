@@ -30,20 +30,27 @@ body{
     letter-spacing: 0.09em;
 }
 #gif-search{
-    width:90%;
+    width:80%;
     height:30px;
-    border-radius:5px;
+    border-bottom-left-radius:5px;
+    border-top-left-radius: 5px;
     border:none;
     font-size:16px;
-    padding:5px;
-    margin:5px;
+    padding:5px 5px 5px 10px;
+    margin:5px 0px 5px 5px;
+
 }
 #submit{
-    width:8%;
-    height:40px;
+    width:16%;
+    height:42px;
+    padding:5px;
+    margin:5px;
     color:#fff;
     border:none;
     background:#1d3eac;
+    font-size:16px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 #gif-container{
     width:100%;
@@ -53,11 +60,7 @@ body{
 }
 
 .gif-wrapper{
-    width:19%;
     margin:5px;
-    height:auto;
-    min-height:100px;
-    
 }
 .gif-wrapper p {
     width:100%;
@@ -72,6 +75,16 @@ body{
 .gif-image{
     width:100%;
     margin:0px;
+}
+@media only screen and (max-width: 1350px) {
+    #giphy-container{
+        width:80%;
+    }
+    .topic-button{
+        width:32%;
+        height:40px;
+        margin:5px 5px;
+    }
 }
 
 
