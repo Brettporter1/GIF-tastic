@@ -1,5 +1,5 @@
-var topics = ['Will Farrel', 'Zach Galifianakis', 'Borat','Robin Williams', 'Jim Carrey','Chevy Chase', 'Richard Pryor', 'Gene Wilder'];
-var gifLimit = 10
+var topics = ['Will Farrel', 'Zach Galifianakis', 'Steve Martin','Robin Williams', 'Jim Carrey','Chevy Chase', 'Richard Pryor', 'Gene Wilder'];
+
 $(document).ready(function () {
     gif.findTopics(topics);
 });
@@ -18,7 +18,7 @@ $(document).on('click', '#submit', function(event){
 $(document).on('click', '.topic-button', function () {
     $('#gif-container').empty();
     var searchTop = $(this).data('type');
-    var queryURL = `https://api.giphy.com/v1/gifs/search?q=$${searchTop}&api_key=mhxOTagN8EaT769YTM0I3Oj5CYZryVgw&limit=${gifLimit}`;
+    var queryURL = `https://api.giphy.com/v1/gifs/search?q=$${searchTop}&api_key=mhxOTagN8EaT769YTM0I3Oj5CYZryVgw&limit=10&offset=5`;
 
     $.ajax({
         url: queryURL,
