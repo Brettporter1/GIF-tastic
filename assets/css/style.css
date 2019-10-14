@@ -29,8 +29,13 @@ body{
     font-size:14px;
     letter-spacing: 0.09em;
 }
+#search-form{
+    display:flex;
+    justify-content: space-between;
+    padding-right:1%;
+}
 #gif-search{
-    width:80%;
+    width:82%;
     height:30px;
     border-bottom-left-radius:5px;
     border-top-left-radius: 5px;
@@ -101,15 +106,19 @@ body{
         height:40px;
         margin:5px 1%;
     }
+    #search-form{
+        display:block;
+    }
     #gif-search{
-        width:98%;
+        width:96%;
         margin:5px 1%;
-        padding:0px;
+        padding:0px 0px 0px 10px;
+        border-radius:5px;
     }
     #submit{
         width:20%;
         margin:5px 40%;
-
+        border-radius:5px;
     }
     #gif-container{
     width:100%;
@@ -135,14 +144,15 @@ body{
         margin:5px 2%;
     }
     #gif-search{
-        width:96%;
+        width:94%;
         margin:5px 2%;
-        padding:0px;
+        padding:0px 0px 0px 10px;
+        border-radius:5px;
     }
     #submit{
         width:96%;
         margin:5px 2%;
-
+        border-radius:5px;
     }
     .gif-wrapper{
         width:48%;
